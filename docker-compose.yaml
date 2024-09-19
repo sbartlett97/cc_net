@@ -1,0 +1,9 @@
+name: "cc_100_dl"
+services:
+  cc_net:
+    build: .
+    volumes:
+      - ./data_cc100:/app/data_cc100
+    command: >
+      bash -c "python cc_net/tools/dl_cc_100.py --outdir data_cc100 --process 8"
+    container_name: cc_net_container
